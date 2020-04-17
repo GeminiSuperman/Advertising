@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的创建</title>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" />
+    <script type="text/javascript" src="/lib/layui/layui.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .layui-lab-spa{
+            padding: 10px;
+        }
+        img{
+            width: 150px;
+            height: auto;
+        }
+        .layui-li{
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        .layui-but{
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <form class="layui-form">
+        <div class="layui-row">
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">广告平台</label>
+                    <div class="layui-input-block">
+                        <select name="adterrace" lay-verify="adterrace">
+                            <option value=""></option>
+                            <option value="0">APP</option>
+                            <option value="1">H5</option>
+                            <option value="2">小程序</option>
+                            <option value="3">PC端</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">广告位置</label>
+                    <div class="layui-input-block">
+                        <select name="adlocation" lay-verify="adlocation">
+                            <option value=""></option>
+                            <option value="0">2020001</option>
+                            <option value="1">2030001</option>
+                            <option value="2">2040001</option>
+                            <option value="3">2050001</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">行业类型</label>
+                    <div class="layui-input-block">
+                        <select name="adbusiness" lay-verify="businesstype">
+                            <option value=""></option>
+                            <option value="0">地产</option>
+                            <option value="1">商城</option>
+                            <option value="2">新闻</option>
+                            <option value="3">教育</option>
+                            <option value="4">工程</option>
+                            <option value="5">医疗</option>
+                            <option value="6">投资</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">创建日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="begindate" placeholder="yyyy-MM-dd">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">行业类别</label>
+                    <div class="layui-input-block">
+                        <select name="adbusinesstype" lay-verify="businesstype">
+                            <option value=""></option>
+                            <option value="0">二手房</option>
+                            <option value="1">新房</option>
+                            <option value="2">租房</option>
+                            <option value="3">写字楼</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">广告名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="establishname" required lay-verify="required" placeholder="请输入广告名称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-block">
+                        <select name="adbusiness" lay-verify="businesstype">
+                            <option value=""></option>
+                            <option value="0">已使用</option>
+                            <option value="1">未使用</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文件格式</label>
+                    <div class="layui-input-block">
+                        <select name="mybusiness" lay-verify="mybusiness">
+                            <option value=""></option>
+                            <option value="0">图片</option>
+                            <option value="1">视频</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md12">
+                <div class="layui-form-item">
+                   <div class="layui-input-block">
+                       <button type="button" class="layui-btn layui-btn-primary">查询</button>
+                       <button type="button" class="layui-btn layui-btn-warm">添加</button>
+                   </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md12">
+                    <!-- 内容区域 -->
+                    <div class="layui-tab-content">
+                        <div class="layui-row">
+                            <ul class="layui-ul">
+                                <li class="layui-li">
+                                    <div class="layui-col-md1">
+                                        <div class="layui-img">
+                                            <img src="/img/sg.jpg">
+                                        </div>
+                                        <div class="layui-lab-spa">
+                                            <label>广告名称：<span>dsjd</span></label>
+                                        </div>
+                                        <div class="layui-lab-spa">
+                                            <label>宣传标题：<span>dsjd</span></label>
+                                        </div>
+                                        <div class="layui-lab-spa">
+                                            <label>宣传内容：<span>dsjd</span></label>
+                                        </div>
+                                        <div class="layui-lab-spa">
+                                            <label>广告链接：<span>dsjd</span></label>
+                                        </div>
+                                        <div class="layui-lab-spa">
+                                            <label>创建日期：<span>dsjd</span></label>
+                                        </div>
+                                        <div class="layui-lab-spa">
+                                            <label>广告位置：<span>dsjd</span></label>
+                                        </div>
+                                        <div class="layui-lab-spa">
+                                            <label>广告状态：<span>dsjd</span></label>
+                                        </div>
+                                        <div class="layui-upload-button layui-but">
+                                            <button type="button" class= "layui-btn layui-btn-fluid">操作</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    layui.use(['form','laydate'],function () {
+            var form = layui;
+            var laydate= layui.laydate;
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#begindate' //指定元素
+        });
+
+    })
+</script>

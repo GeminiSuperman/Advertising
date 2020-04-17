@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>广告发布</title>
+		<link rel="stylesheet" href="/lib/layui/css/layui.css" />
+		<link rel="stylesheet" href="/css/adissue.css" />
+		<script type="text/javascript" src="/lib/layui/layui.js"></script>
+	</head>
+
+	<body>
+		<form class="layui-form" action="">
+			<div class="layui-row">
+				<div class="layui-col-md12">
+					<div class="layui-form-item">
+						<label class="layui-form-label">智能填写</label>
+						<div class="layui-input-block">
+							<input type="checkbox" name="switch" lay-skin="switch">
+						</div>
+					</div>
+				</div>
+				<div class=" layui-dadissue-div layui-col-md2">
+					<div class="layui-form-item">
+						<label class="layui-form-label">广告名称</label>
+						<div class="layui-input-block">
+							<input type="text" name="title" required lay-verify="required" placeholder="请输入广告名称" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">广告类型</label>
+						<div class="layui-input-block">
+							<select name="adtype" lay-verify="required">
+								<option value=""></option>
+								<option value="0">APP</option>
+								<option value="1">H5</option>
+								<option value="2">小程序</option>
+								<option value="3">PC端</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">广告行业</label>
+						<div class="layui-input-block">
+							<select name="business" lay-verify="required">
+								<option value=""></option>
+								<option value="0">地产</option>
+								<option value="1">商城</option>
+								<option value="2">新闻</option>
+								<option value="3">教育</option>
+								<option value="4">工程</option>
+								<option value="5">医疗</option>
+								<option value="6">投资</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">行业类别</label>
+						<div class="layui-input-block">
+							<select name="business" lay-verify="required">
+								<option value=""></option>
+								<option value="0">新房</option>
+								<option value="1">二手房</option>
+								<option value="2">租房</option>
+								<option value="3">写字楼</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">广告位置</label>
+						<div class="layui-input-block">
+							<select name="business" lay-verify="required">
+								<option value=""></option>
+								<option value="0">001</option>
+								<option value="1">002</option>
+								<option value="2">003</option>
+								<option value="3">004</option>
+							</select>
+						</div>
+					</div>
+
+					<label class="layui-form-label">宣传标语</label>
+					<div class="layui-input-block">
+						<input type="text" name="title" required lay-verify="required" placeholder="请输入宣传标语" autocomplete="off" class="layui-input">
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">广告内容</label>
+						<div class="layui-input-block">
+							<input type="text" name="title" required lay-verify="required" placeholder="请输入广告内容" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">广告链接</label>
+						<div class="layui-input-block">
+							<input type="text" name="title" required lay-verify="required" placeholder="请输入广告链接" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="layui-col-md4">
+					<div class="layui-form-item">
+						<label class="layui-form-label">开始日期</label>
+						<div class="layui-inline">
+							<input type="text" class="layui-input" id="adte" placeholder="yyyy-MM-dd" lay-key="1">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">结束日期</label>
+						<div class="layui-inline">
+							<input type="text" class="layui-input" id="adte1" placeholder="yyyy-MM-dd" lay-key="2">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">投放天数</label>
+						<div class="layui-input-block">
+							<input type="text" name="title" autocomplete="off" class="layui-input" style="width: 176.42px; height: 38px;">
+						</div>
+					</div>
+					<div class="layui-col-md2">
+						<div class="layui-form-item layui-adissue-button layui-layout-left">
+							<button type="button" class="layui-btn" id="adimg">
+							<i class="layui-icon">&#xe67c;</i>上传图片
+						</button>
+						</div>
+					</div>
+
+				</div>
+				<div class="layui-col-md4"></div>
+				<div class="layui-col-md12">
+					<div class="layui-input-block">
+						<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</body>
+
+</html>
+<script>
+	layui.use(['form', 'laydate', 'upload'],
+		function() {
+			var form = layui.form;
+			var laydate = layui.laydate;
+			var upload = layui.upload;
+			var layer = layui.layer;
+			var item = this.item; //获取当前触发上传元素
+			var start = laydate.render({
+				elem: '#adte1'
+			})
+			laydate.render({
+				elem: '#adte'
+			})
+			//上传--执行实例
+			var uploadInst = upload.render({
+				elem: '#adimg' //绑定元素
+					,
+				url: '/upload/' //上传接口
+					,
+				done: function(res) {
+					//上传完毕回调
+					layui.use('layer', function() {
+						layer.msg(res.url, {
+							time: 6000, //6s后自动关闭
+							icon: 1
+						});
+					});
+				},
+				error: function() {
+					//请求异常回调
+					r
+
+				},
+				accept: 'images\video' //上传文件类型
+					,
+				multiple: 'true' //是否开启多文件上传
+					,
+			});
+			//监听提交
+			form.on('submit(formDemo)', function(data) {
+				layer.msg(JSON.stringify(data.field));
+				return false;
+			});
+
+		});
+</script>

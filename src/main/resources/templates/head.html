@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>广告系统后台</title>
+		<link rel="stylesheet" href="/lib/layui/css/layui.css" />
+		<script type="text/javascript" src="/lib/layui/layui.js"></script>
+		<script type="text/javascript" src="/js/head.js" ></script>
+	</head>
+
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header">
+				<div class="layui-logo">Advertising 后台管理</div>
+				<!-- 头部区域（可配合layui已有的水平导航） -->
+				<ul class="layui-nav layui-layout-left">
+					<li class="layui-nav-item">
+						<a href="">控制台</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">主页</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">用户</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">其它系统</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="">邮件管理</a>
+							</dd>
+							<dd>
+								<a href="">消息管理</a>
+							</dd>
+							<dd>
+								<a href="">授权管理</a>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<ul class="layui-nav layui-layout-right">
+					<li class="layui-nav-item">
+						<a href="javascript:;">
+							<img src="/static/img/user.png" class="layui-nav-img"> 贤心
+						</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="">基本资料</a>
+							</dd>
+							<dd>
+								<a href="">安全设置</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">退了</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="layui-side layui-bg-black">
+				<div class="layui-side-scroll">
+					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+					<ul class="layui-nav layui-nav-tree" lay-filter="test">
+						<li class="layui-nav-item layui-nav-itemed">
+							<a class="site-demo-active" data-id="1" data-title="主页" data-url="/admin/home">主页</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">广告管理模块</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="site-demo-active" data-id="2" data-title="广告发布" data-url="/admin/adissue" href="javascript:;">广告发布</a>
+								</dd>
+								<dd>
+									<a class="site-demo-active" data-id="3" data-title="创建广告" data-url="/admin/adestablish" href="javascript:;">创建广告</a>
+								</dd>
+								<dd>
+									<a class="site-demo-active" data-id="4" data-title="广告预约" data-url="/admin/adissue" href="javascript:;">广告预约</a>
+								</dd>
+								<dd>
+									<a class="site-demo-active" data-id="4" data-title="我的创建" data-url="/admin/myestablish" href="javascript:;">我的创建</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">广告文件管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="site-demo-active" href="javascript:;">文件管理</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">user审核查看管理模块</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="site-demo-active" href="javascript:;">广告预约列表</a>
+								</dd>
+								<dd>
+									<a class="site-demo-active" href="javascript:;">发布审核列表</a>
+								</dd>
+								<dd>
+									<a class="site-demo-active" href="javascript:;">开通审核列表</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">admin审核查看管理模块</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="site-demo-active" href="javascript:;">广告预约列表</a>
+								</dd>
+								<dd>
+									<a class="site-demo-active" href="javascript:;">发布审核列表</a>
+								</dd>
+								<dd>
+									<a class="site-demo-active" href="javascript:;">开通审核列表</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">订单管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">订单列表</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">admin位置管理模块</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">admin广告位置</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">user广告位置列表</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">广告数据中心模块</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">广告收入报表</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">广告激活报表</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">广告用户报表</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">广告统计报表</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">广告流量报表</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">广告位置排行</a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			 <!-- 主体区域 -->
+		    <div class="layui-body layui-tab layui-tab-brief" lay-allowclose="true" lay-filter="iframe-tabs">
+		        <!-- 标签栏 -->
+		        <ul class="layui-tab-title"></ul>
+		        <!-- 内容区域 -->
+		    <div class="layui-tab-content">
+		
+		    </div>
+
+			<div class="layui-footer">
+				<!-- 底部固定区域 -->
+				© YJZH_Advertising.com - 底部固定区域
+			</div>
+		</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户首页</title>
+		<link rel="stylesheet" href="/lib/layui/css/layui.css" />
+		<link rel="stylesheet" href="/css/userhome.css" />
+		<script type="text/javascript" src="/lib/layui/layui.all.js" ></script>
+		<script type="text/javascript" src="/js/userhome.js" ></script>
+	</head>
+	<body>
+		<div class="layui-fluid">
+			<!--总布局-->
+			<div class="layui-row layui-col-space25 layui-home-backcolor">
+				<div class="layui-col-md12">
+					
+					<div class="layui-select-title layui-se-input">
+						<span>平台类型:</span>
+					<select name="paltform" lay-verify="">
+					  <option value="">请选择一个平台</option>
+					  <option value="1">APP</option>
+					  <option value="2">H5</option>
+					  <option value="3">小程序</option>
+					  <option value="4">PC端</option>
+					</select>
+					</div>
+					
+				</div>
+				<!--点击量-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header layui-visitnum">
+							点击量 
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">9,999,666</p>
+						</div>
+					</div>
+				</div>
+				<!--剩余天数-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							剩余天数 
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">33,555</p>
+						</div>
+					</div>
+				</div>
+				<!--访问量-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							访问量
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">999,666</p>
+						</div>
+					</div>
+				</div>
+				<!--点击率-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							点击率
+							<!--<span class="layui-badge layui-bg-orange layuiadmin-badge">月</span>-->
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">6%</p>
+						</div>
+					</div>
+				</div>
+				<!--消耗总金额-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							消耗总金额
+							<!--<span class="layui-badge layui-bg-orange layuiadmin-badge">月</span>-->
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">900￥</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="layui-col-md10">
+					<span>数据展示</span>
+				</div>
+				<!--<div class="layui-col-md2">
+					<div class="layui-upload-button">
+						<button onclick="viewda">视图</button>
+						<button>列表</button>
+					</div>
+				</div>-->
+				<div id="echarview" class="layui-col-md12">
+					<table id="view" lay-filter="test"></table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<style>
+
+</style>
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  //第一个实例
+  table.render({
+    elem: '#view'
+    ,height: 312
+    ,url: '/demo/table/user/' //数据接口
+    ,page: true //开启分页
+    ,limit:10
+    ,loading:false
+    ,cols: [[ //表头
+      {field: 'id', title: 'ID', width:80, sort: true, fixed: 'left'}
+      ,{field: 'username', title: '日期', width:80}
+      ,{field: 'sex', title: '点击数', width:80, sort: true}
+      ,{field: 'city', title: '点击率', width:80} 
+      ,{field: 'sign', title: '平台类型', width: 177}
+    ]]
+  });
+});
+</script>

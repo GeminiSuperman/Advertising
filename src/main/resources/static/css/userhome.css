@@ -1,0 +1,27 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.layui-fluid{
+	/*background-color: #D3D4D3;*/
+}
+.layui-se-input{
+	width: 10%;
+	height: auto;
+	padding-top: 15px;
+}
+select{
+	width: 60%;
+	height: 30px;
+}
+.layui-card-header{
+	color: white;
+}
+.layui-card{
+	background-color: #00CCFF;
+	color: white;
+	font-size: 35px;
+}
+.layuiadmin-card-list{
+	padding: 25px;
+}

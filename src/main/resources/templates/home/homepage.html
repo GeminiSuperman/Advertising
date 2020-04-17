@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>主页</title>
+		<link rel="stylesheet" href="/css/homepage.css" />
+		<!--引入layui-css-->
+		<link rel="stylesheet" href="/lib/layui/css/layui.css" />
+		<!--引入layui-js-->
+		<script type="text/javascript" src="/lib/layui/layui.js"></script>
+		<!-- 引入 echarts.js -->
+		<script type="text/javascript" src="/js/echarts.min.js"></script>
+		<script type="text/javascript" src="/js/homeoageeharts.js"></script>
+	</head>
+
+	<body>
+		<div class="layui-fluid">
+			<!--总布局-->
+			<div class="layui-row layui-col-space25 layui-home-backcolor">
+				<!--广告收入-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header layui-visitnum">
+							广告收入总额 <span class="layui-badge layui-bg-blue layuiadmin-badge">周</span>
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">9,999,666</p>
+							<p>总计收入 <span class="layuiadmin-span-color">88万 <i class="layui-inline layui-icon layui-icon-dollar"></i></span></p>
+						</div>
+					</div>
+				</div>
+				<!--剩余广告位-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							剩余广告位数量 <span class="layui-badge layui-bg-blue layuiadmin-badge">月</span>
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">33,555</p>
+							<p>已使用广告位 <span class="layuiadmin-span-color">10% <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span></p>
+						</div>
+					</div>
+				</div>
+				<!--广告投放数量-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							广告投放用户量
+							<span class="layui-badge layui-bg-green layuiadmin-badge">年</span>
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">999,666</p>
+							<p> 未投放用户量 <span class="layuiadmin-span-color">*** <i class="layui-inline layui-icon layui-icon-user"></i></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!--广告订单-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							广告订单量
+							<span class="layui-badge layui-bg-orange layuiadmin-badge">月</span>
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">66,666</p>
+							<p>
+								最近一个月 <span class="layuiadmin-span-color">15% <i class="layui-inline layui-icon layui-icon-flag"></i></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!--广告用户预约量-->
+				<div class="layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							广告用户预约量
+							<span class="layui-badge layui-bg-orange layuiadmin-badge">月</span>
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<p class="layuiadmin-big-font">66,666</p>
+							<p>
+								最近一个月 <span class="layuiadmin-span-color">15% <i class="layui-inline layui-icon layui-icon-upload-circle"></i></span>
+							</p>
+						</div>
+						<!--视图-->
+					</div>
+				</div>
+			</div>
+			<!--内容布局--十二栅格-->
+			<div class="layui-row layui-data">
+				<!--视图-扇形统计图-->
+				<div class="layui-col-sm6 layui-col-md5">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							平台广告数据
+						</div>
+						<div class="layui-card-body layuiadmin-card-list">
+							<div id="echarts" class="layui-echarts layui-card-body"></div>
+						</div>
+						<div class="layui-adnum"><span>平台广告投放量</span></div>
+						<div class="layui-industry"><span>广告行业类型投放量</span></div>
+					</div>
+				</div>
+
+				<!--视图-列表结合-->
+				<div class="layui-col-sm6 layui-col-md7">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							数据浏览
+						</div>
+						<div id="echarda" class="layui-card-body layui-datashi">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--待办事项-->
+			<div class="layui-col-md5 layui-wait">
+				<div class="layui-card">
+					<div class="layui-card-header">待办事项</div>
+					<div class="layui-card-body">
+						<div class="layui-carousel layadmin-carousel layadmin-backlog" style="width: 100%; height: 280px;">
+							<div class="laui-head-wait">
+								<ul class="layui-row layui-col-space10 layui-this">
+									<li class="layui-col-xs6">
+										<a lay-href="javascript:;" class="layadmin-backlog-body">
+											<h3>待发布</h3>
+											<p><cite>66</cite></p>
+										</a>
+									</li>
+									<li class="layui-col-xs6">
+										<a lay-href="javascript:;" class="layadmin-backlog-body">
+											<h3>待预约</h3>
+											<p><cite>12</cite></p>
+										</a>
+									</li>
+									<li class="layui-col-xs6">
+										<a lay-href="javascript:;" class="layadmin-backlog-body">
+											<h3>待待开通</h3>
+											<p><cite>99</cite></p>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!--<div class="layui-carousel-ind">
+								<ul>
+									<li class="layui-this"></li>
+									<li></li>
+								</ul>
+					</div>-->
+						</div>
+					</div>
+				</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+	var echarda = echarts.init(document.getElementById('echarda'));
+	option = {
+		//  title: {
+		//      text: '堆叠区域图'
+		//  },
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: {
+				type: 'cross',
+				label: {
+					backgroundColor: '#6a7985'
+				}
+			}
+		},
+		legend: {
+			data: ['平台类型', '行业类型', '总额']
+		},
+		toolbox: {
+			feature: {
+				saveAsImage: {}
+			}
+		},
+		grid: {
+			left: '3%',
+			right: '4%',
+			bottom: '3%',
+			containLabel: true
+		},
+		xAxis: [{
+			type: 'category',
+			boundaryGap: false,
+			data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+		}],
+		yAxis: [{
+			type: 'value'
+		}],
+		series: [{
+				name: '平台类型',
+				type: 'line',
+				stack: '总量',
+				areaStyle: {},
+				data: [120, 132, 101, 134, 90, 230, 210]
+			},
+			{
+				name: '行业类型',
+				type: 'line',
+				stack: '总量',
+				areaStyle: {},
+				data: [220, 182, 191, 234, 290, 330, 310]
+			},
+			{
+				name: '总额',
+				type: 'line',
+				stack: '总量',
+				areaStyle: {},
+				data: [150, 232, 201, 154, 190, 330, 410]
+			},
+		]
+	};
+	// 使用刚指定的配置项和数据显示图表。
+	echarda.setOption(option);
+</script>
