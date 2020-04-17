@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告推广审核</title>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" />
+    <script type="text/javascript" src="/lib/layui/layui.js"></script>
+</head>
+<body>
+<div class="layui-row">
+
+    <div class="layui-col-md4">
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-audit-label">申请行业</label>
+            <div class="layui-input-block layui-audit-select">
+                <select name="layui-industry" lay-verify="adlocation">
+                    <option value="">请选择</option>
+                    <option value="0">地产</option>
+                    <option value="1">新闻</option>
+                    <option value="2">商城</option>
+                    <option value="3">投资</option>
+                </select>
+            </div>
+        </div>
+
+    <div class="layui-col-md4">
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-audit-label">开通VIP类型</label>
+            <div class="layui-input-block layui-audit-select">
+                <select name="layui-viptype" lay-verify="adlocation">
+                    <option value="">请选择</option>
+                    <option value="0">白金VIP</option>
+                    <option value="1">黄金VIP</option>
+                    <option value="2">钻石VIP</option>
+                </select>
+            </div>
+        </div>
+
+    <div class="layui-col-md4">
+        <div class="layui-form-item">
+            <label class="layui-form-label">申请日期</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="begindate" placeholder="yyyy-MM-dd">
+            </div>
+        </div>
+    </div>
+
+        <div class="layui-col-md4">
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-audit-label">申请资质</label>
+                <div class="layui-input-block layui-audit-select">
+                    <select name="layui-aptitude" lay-verify="adlocation">
+                        <option value="">请选择</option>
+                        <option value="0">个人认证</option>
+                        <option value="1">营业执照</option>
+                    </select>
+                </div>
+            </div>
+
+    <div class="layui-col-md3">
+        <div class="">
+            <button type="button" class="layui-btn layui-btn-radius">查询</button>
+        </div>
+    </div>
+
+            <!--营业执照认证列表-->
+            <div class="layui-tab">
+                <table class="layui-table" lay-data="{height:315, url:'/admin/audit', page:true, id:'test'}" lay-filter="test">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'id', width:80, sort: true}">申请id</th>
+                        <th lay-data="{field:'platform', width:80}">申请用户</th>
+                        <th lay-data="{field:'type', width:80, sort: true}">申请行业类型</th>
+                        <th lay-data="{field:'industry'}">资质类型</th>
+                        <th lay-data="{field:'industrySort'}">有效期</th>
+                        <th lay-data="{field:'localtion', sort: true}">公司名称</th>
+                        <th lay-data="{field:'fileType', sort: true}">资质编号</th>
+                        <th lay-data="{field:'filepath', sort: true，templet:'<div><img src={{ canshu.imgpath}} width=50 height=50 onclick=showUrl(this)></div>'}">资质图片</th>
+                        <th lay-data="{field:'img_url', sort: true,title：'图视',width:80,align:'center',templet:'<div><img class='boders' src='{{canshu.imgpath}}' width='50' heigth='50'></div>'}">资质图片</th>
+                        <th lay-data="{field:'headline'}">法人/经营者</th>
+                        <th lay-data="{field:'content', sort: true}">祖册地</th>
+                        <th lay-data="{field:'startDeta', sort: true}">开通VIP类型</th>
+                        <th lay-data="{field:'overDeta', sort: true}">支付类型</th>
+                        <th lay-data="{field:'state', sort: true}">支付金额</th>
+                        <th lay-data="{field:'state', sort: true}">申请日期</th>
+                        <th lay-data="{field:'wealth', sort: true}">操作</th>
+
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <!--个人资质认证-->
+            <div class="layui-tab">
+                <table class="layui-table" lay-data="{height:315, url:'/admin/audit', page:true, id:'test'}" lay-filter="test">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'id', width:80, sort: true}">申请id</th>
+                        <th lay-data="{field:'platform', width:80}">申请用户</th>
+                        <th lay-data="{field:'type', width:80, sort: true}">申请行业类型</th>
+                        <th lay-data="{field:'industry'}">资质类型</th>
+                        <th lay-data="{field:'industrySort'}">身份证号码</th>
+                        <th lay-data="{field:'filepath', sort: true，templet:'<div><img src={{ canshu.imgpath}} width=50 height=50 onclick=showUrl(this)></div>'}">正面身份证照</th>
+                        <th lay-data="{field:'img_url', sort: true,title：'图视',width:80,align:'center',templet:'<div><img class='boders' src='{{canshu.imgpath}}' width='50' heigth='50'></div>'}">反面身份证照</th>
+                        <th lay-data="{field:'headline'}">身份证地址</th>
+                        <th lay-data="{field:'startDeta', sort: true}">开通VIP类型</th>
+                        <th lay-data="{field:'overDeta', sort: true}">支付类型</th>
+                        <th lay-data="{field:'state', sort: true}">支付金额</th>
+                        <th lay-data="{field:'state', sort: true}">申请日期</th>
+                        <th lay-data="{field:'wealth', sort: true}">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+</div>
+</div>
+</div>
+</body>
+</html>

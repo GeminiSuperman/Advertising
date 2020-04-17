@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user审核:--发布--预约</title>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="/css/audit.css">
+    <script type="text/javascript" src="/lib/layui/layui.js"></script>
+</head>
+<body>
+    <div class="layui-row">
+
+        <div class="layui-col-md4">
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-audit-label">广告平台</label>
+                <div class="layui-input-block layui-audit-select">
+                    <select name="layui-audit" lay-verify="adlocation">
+                        <option value="">请选择</option>
+                        <option value="0">APP</option>
+                        <option value="1">H5</option>
+                        <option value="2">小程序</option>
+                        <option value="3">PC端</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-audit-label">文件类型</label>
+                <div class="layui-input-block layui-audit-select">
+                    <select name="layui-audit" lay-verify="adlocation">
+                        <option value="">请选择</option>
+                        <option value="0">图片</option>
+                        <option value="1">视频</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    <div class="layui-col-md4">
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-audit-label">行业类型</label>
+            <div class="layui-input-block layui-audit-select">
+                <select name="layui-audit" lay-verify="adlocation">
+                    <option value="">请选择</option>
+                    <option value="0">地产</option>
+                    <option value="1">新闻</option>
+                    <option value="2">教育</option>
+                    <option value="3">医疗</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-audit-label">行业类别</label>
+            <div class="layui-input-block layui-audit-select">
+                <select name="layui-audit" lay-verify="adlocation">
+                    <option value="">新房</option>
+                    <option value="0">二手房</option>
+                    <option value="1">写字楼</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-col-md4">
+        <div class="layui-form-item">
+            <label class="layui-form-label">开始日期</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="begindate" placeholder="yyyy-MM-dd">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">结束日期</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="overdate" placeholder="yyyy-MM-dd">
+            </div>
+          </div>
+       </div>
+
+        <div class="layui-col-md3 layui-container">
+                <div class="">
+                    <button type="button" class="layui-btn layui-btn-radius">查询</button>
+                    <button type="button" class="layui-btn layui-btn-radius layui-btn-danger">重置</button>
+                </div>
+        </div>
+
+        <div class="layui-col-md3">
+            <div class="layui-layout-left">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-normal">切换视图</button>
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-normal">切换列表</button>
+            </div>
+        </div>
+
+        <!--列表-->
+        <div class="layui-tab">
+            <table class="layui-table" lay-data="{height:315, url:'/admin/audit', page:true, id:'test'}" lay-filter="test">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id', width:80, sort: true}">id</th>
+                    <th lay-data="{field:'platform', width:80}">预约平台</th>
+                    <th lay-data="{field:'type', width:80, sort: true}">预约广告类型</th>
+                    <th lay-data="{field:'industry'}">预约行业类型</th>
+                    <th lay-data="{field:'industrySort'}">预约行业类别</th>
+                    <th lay-data="{field:'localtion', sort: true}">预约广告位置</th>
+                    <th lay-data="{field:'fileType', sort: true}">预约文件格式</th>
+                    <th lay-data="{field:'filepath', sort: true，templet:'<div><img src={{ canshu.imgpath}} width=50 height=50 onclick=showUrl(this)></div>'}">显示（图视）</th>
+                    <th lay-data="{field:'headline'}">预约宣传标题</th>
+                    <th lay-data="{field:'content', sort: true}">预约内容</th>
+                    <th lay-data="{field:'startDeta', sort: true}">预约日期</th>
+                    <th lay-data="{field:'overDeta', sort: true}">结束日期</th>
+                    <th lay-data="{field:'state', sort: true}">预约状态</th>
+                    <th lay-data="{field:'wealth', sort: true}">操作</th>
+                    <th lay-data="{field:'img_url', sort: true,title：'图视',width:80,align:'center',templet:'<div><img class='boders' src='{{canshu.imgpath}}' width='50' heigth='50'></div>'}">图片显示</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+
+        <!--视图-->
+        <div></div>
+    </div>
+</body>
+</html>
+<script>
+    layui.use(['laydate',],function () {
+        var laydate = layui.laydate;
+        //日期
+        var begindate = laydate.render({
+            elem:'#begindate'
+        });
+        var overdate = laydate.render({
+            elem:'#overdate'
+        });
+    })
+</script>

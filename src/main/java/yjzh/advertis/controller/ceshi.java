@@ -45,6 +45,22 @@ public class ceshi {
         return "/filemanagement/filemanagement";
     }
 
+    /*user审核列表*/
+    @RequestMapping("/audit")
+    public String audit() {
+        return "/useraudit/audit";
+    }
 
+    /*admin审核列表*/
+    @RequestMapping("/ADaudit")
+    public String adminaudit() {
+        return "/adminaudit/adminaudit";
+    }
+
+    /*admin审核推广列表*/
+    @RequestMapping("/generalize")
+    public String generalize() {
+        return "/adminaudit/generalize";
+    }
 
 }

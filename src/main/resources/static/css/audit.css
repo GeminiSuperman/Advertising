@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.layui-audit-label{
+    font-size: 18px;
+}
+select{
+    font-family: "微软雅黑";
+    width: 60%;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+option{
+    color: black;
+    line-height: 20px;
+}
+select:focus{
+    border: 2px #ddd solid;
+    box-shadow: 0 0 15px 1px #DDDDDD;
+}
+.layui-audit-left>button{
+    left: 30px;
+}
