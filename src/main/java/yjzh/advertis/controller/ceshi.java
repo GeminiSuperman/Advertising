@@ -33,11 +33,18 @@ public class ceshi {
         return "/admanagement/myestablish";
     }
 
-    /*我的创建*/
+    /*我的创建--单独页面*/
     @RequestMapping("/myestablishvie")
     public String myestablishvie() {
         return "/utilview/myestablishvie";
     }
+
+    /*文件管理*/
+    @RequestMapping("/filemanagement")
+    public String filemanagement() {
+        return "/filemanagement/filemanagement";
+    }
+
 
 
 }
