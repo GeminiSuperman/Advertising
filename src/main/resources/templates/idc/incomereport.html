@@ -7,34 +7,53 @@
     <link rel="stylesheet" href="/lib/layui/css/layui.css" />
     <!--引入layui-js-->
     <script type="text/javascript" src="/lib/layui/layui.js"></script>
+    <style>
+        /*解决label标签超过4个中文是换行的问题*/
+        .layui-form-label{
+            white-space:nowrap!important;
+        }
+    </style>
 </head>
 <body>
     <form class="layui-form">
         <div class="layui-row">
             <div class="layui-col-md3">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">请选择平台类型</label>
+                    <label class="layui-form-label">查询类型</label>
                     <div class="layui-input-block">
                         <select name="platformtype" lay-verify="required">
                             <option value=""></option>
-                            <option value="0">APP</option>
-                            <option value="1">H5</option>
-                            <option value="2">小程序</option>
-                            <option value="3">PC端</option>
+                            <option value="0">按平台</option>
+                            <option value="1">按行业类型</option>
+                            <option value="2">按行业类别</option>
                         </select>
                     </div>
                 </div>
             </div>
+
+
 
             <div class="layui-col-md3">
                 <div class="layui-form-item">
                     <button type="button" class="layui-btn layui-btn-warm">导出数据</button>
                     </div>
                 </div>
+
+            <div class="layui-tab">
+                <div class="layui-tab">
+                    <table class="layui-table" lay-data="{height:315, url:'/admin/audit', page:true, id:'activate'}" lay-filter="test">
+                        <thead>
+                        <tr>
+                            <th lay-data="{field:'id', width:80, sort: true}">id</th>
+                            <th lay-data="{field:'platform', width:80}">类型</th>
+                            <th lay-data="{field:'type', width:80, sort: true}">总收入</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
 
-
-        </div>
+            </div>
     </form>
 </body>
 </html>

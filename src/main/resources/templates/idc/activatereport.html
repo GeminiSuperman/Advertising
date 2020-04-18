@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/lib/layui/css/layui.css" />
     <!--引入layui-js-->
     <script type="text/javascript" src="/lib/layui/layui.js"></script>
+    <style>
+        /*解决label标签超过4个中文是换行的问题*/
+        .layui-form-label{
+            white-space:nowrap!important;
+        }
+    </style>
 </head>
 <body>
     <form class="layui-form">
         <div class="layui-row">
-            <div class="layui-col-md4">
+            <div class="layui-col-md3">
                 <div class="layui-form-item">
                     <label class="layui-form-label">激活平台类型</label>
                     <div class="layui-input-block">
@@ -26,37 +32,62 @@
                 </div>
             </div>
 
-
-            <div class="layui-col-md4">
+            <div class="layui-col-md3">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">激活用户类型</label>
+                    <label class="layui-form-label">名称</label>
                     <div class="layui-input-block">
-                        <input type="text" class="layui-input" id="test1">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入你要查询的内容" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
 
-
-            <div class="layui-col-md4">
+            <div class="layui-col-md3">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">激活用户类型</label>
-                    <div class="layui-input-block">
-                        <input type="text" class="layui-input" id="test1">
+                    <label class="layui-form-label">激活日期</label>
+                    <div class="layui-inline"> <!-- 注意：这一层元素并不是必须的 -->
+                        <input type="text" class="layui-input" placeholder="yyyy-MM-dd" id="test1">
                     </div>
                 </div>
             </div>
 
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn layui-btn-normal">查询</button>
+                        <button type="button" class="layui-btn layui-btn-warm">导出数据</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-tab">
+                <table class="layui-table" lay-data="{height:315, url:'/admin/audit', page:true, id:'activate'}" lay-filter="test">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'id', width:80, sort: true}">id</th>
+                        <th lay-data="{field:'platform', width:80}">激活用户类型</th>
+                        <th lay-data="{field:'type', width:80, sort: true}">激活平台类型</th>
+                        <th lay-data="{field:'industry'}">激活总数</th>
+                        <th lay-data="{field:'industrySort'}">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </form>
 </body>
 </html>
 <script>
-    layui.use(['form'],function () {
+    layui.use(['form','laydate'],function () {
         var form = layui.form;
+        var laydate = layui.laydate;
         //监听提交
         form.on('submit(formDemo)', function(data){
             layer.msg(JSON.stringify(data.field));
             return false;
+        });
+        //日期
+        laydate.render({
+            elem: '#test1' //指定元素
         });
     })
 </script>

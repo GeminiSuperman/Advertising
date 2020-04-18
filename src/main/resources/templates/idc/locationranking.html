@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位置排行</title>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" />
+    <script type="text/javascript" src="/lib/layui/layui.js"></script>
+</head>
+<body>
+    <form class="layui-form">
+        <div class="layui-row">
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">平台类型</label>
+                    <div class="layui-input-block">
+                        <select name="platformtype" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">APP</option>
+                            <option value="1">H5</option>
+                            <option value="2">小程序</option>
+                            <option value="3">PC端</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">广告名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入你要查询的名称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">行业类型</label>
+                    <div class="layui-input-block">
+                        <select name="platformtype" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">地产</option>
+                            <option value="1">新闻</option>
+                            <option value="2">商城</option>
+                            <option value="3">教育</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">条件类型</label>
+                    <div class="layui-input-block">
+                        <select name="platformtype" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">曝光量</option>
+                            <option value="1">点击量</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md4">
+                <label class="layui-form-label">日期</label>
+                <div class="layui-inline">
+                    <input type="text" class="layui-input" placeholder="yyyy-MM-dd" id="locationdate">
+                </div>
+
+                <div class="layui-input-block" style="top: 12px">
+                    <button type="button" class="layui-btn layui-btn-normal">查询</button>
+                </div>
+            </div>
+
+            <div class="layui-tab">
+                <table class="layui-table" lay-data="{height:315, url:'/admin/audit', page:true, id:'activate'}" lay-filter="test">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'id', width:80, sort: true}">排名</th>
+                        <th lay-data="{field:'platform', width:80}">行业类型</th>
+                        <th lay-data="{field:'type', width:80, sort: true}">广告位置数量</th>
+                        <th lay-data="{field:'industry'}">广告状态</th>
+                        <th lay-data="{field:'industrySort'}">点击量</th>
+                        <th lay-data="{field:'industrySort'}">曝光量</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    layui.use(['form','laydate'],function () {
+        var form = layui.form;
+        var laydate = layui.laydate;
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#locationdate' //指定元素
+        });
+    })
+</script>

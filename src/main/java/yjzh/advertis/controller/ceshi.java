@@ -85,10 +85,22 @@ public class ceshi {
         return "/idc/incomereport";
     }
 
-    /*数据中心--激活报表*/
+    /*数据中心--激活报表userreport*/
     @RequestMapping("/activatereport")
     public String activatereport() {
         return "/idc/activatereport";
+    }
+
+    /*数据中心--用户报表*/
+    @RequestMapping("/userreport")
+    public String userreport() {
+        return "/idc/userreport";
+    }
+
+    /*数据中心--广告位置排行*/
+    @RequestMapping("/locationranking")
+    public String locationranking() {
+        return "/idc/locationranking";
     }
 
 

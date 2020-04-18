@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户报表</title>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" />
+    <script type="text/javascript" src="/lib/layui/layui.js"></script>
+</head>
+<body>
+    <form class="layui-form">
+        <div class="layui-row">
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">平台类型</label>
+                    <div class="layui-input-block">
+                        <select name="platformtype" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">APP</option>
+                            <option value="1">H5</option>
+                            <option value="2">小程序</option>
+                            <option value="3">PC端</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <button type="button" class="layui-btn">查询</button>
+                </div>
+            </div>
+
+            <div class="layui-tab">
+                <div class="layui-tab">
+                    <table class="layui-table" lay-data="{height:315, url:'/admin/audit', page:true, id:'userreport'}" lay-filter="test">
+                        <thead>
+                        <tr>
+                            <th lay-data="{field:'id', width:80, sort: true}">id</th>
+                            <th lay-data="{field:'platform', width:80}">平台类型</th>
+                            <th lay-data="{field:'type', width:80, sort: true}">用户类型</th>
+                            <th lay-data="{field:'platform', width:80}">用户名称</th>
+                            <th lay-data="{field:'type', width:80, sort: true}">VIP类型</th>
+                            <th lay-data="{field:'platform', width:80}">开通日期</th>
+                            <th lay-data="{field:'type', width:80, sort: true}">手机号</th>
+                            <th lay-data="{field:'platform', width:80}">操作</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    layui.use(['form'],function () {
+            var form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    })
+</script>
