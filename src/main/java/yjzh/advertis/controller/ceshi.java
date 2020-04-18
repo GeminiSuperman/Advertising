@@ -61,10 +61,17 @@ public class ceshi {
         return "/adminaudit/adminaudit";
     }
 
-    /*admin审核推广列表*/
+    /*admin审核推广列表adminlocation.html*/
     @RequestMapping("/generalize")
     public String generalize() {
         return "/adminaudit/generalize";
     }
+
+    /*admin广告位置管理列表*/
+    @RequestMapping("/adminlocation")
+    public String adminlocation() {
+        return "/locationdetails/adminlocation";
+    }
+
 
 }
