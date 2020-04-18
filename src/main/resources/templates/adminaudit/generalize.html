@@ -7,8 +7,8 @@
     <script type="text/javascript" src="/lib/layui/layui.js"></script>
 </head>
 <body>
-<div class="layui-row">
-
+<form class="layui-form">
+<div class="layui-row layui-col-space30">
     <div class="layui-col-md4">
         <div class="layui-form-item">
             <label class="layui-form-label layui-audit-label">申请行业</label>
@@ -22,6 +22,7 @@
                 </select>
             </div>
         </div>
+    </div>
 
     <div class="layui-col-md4">
         <div class="layui-form-item">
@@ -35,12 +36,13 @@
                 </select>
             </div>
         </div>
+    </div>
 
     <div class="layui-col-md4">
         <div class="layui-form-item">
             <label class="layui-form-label">申请日期</label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input" id="begindate" placeholder="yyyy-MM-dd">
+                <input type="text" class="layui-input" id="applydate" placeholder="yyyy-MM-dd">
             </div>
         </div>
     </div>
@@ -56,7 +58,7 @@
                     </select>
                 </div>
             </div>
-
+        </div>
     <div class="layui-col-md3">
         <div class="">
             <button type="button" class="layui-btn layui-btn-radius">查询</button>
@@ -109,12 +111,21 @@
                         <th lay-data="{field:'state', sort: true}">申请日期</th>
                         <th lay-data="{field:'wealth', sort: true}">操作</th>
                     </tr>
-                    </thead>
-                </table>
+                        </thead>
+                    </table>
+                </div>
             </div>
-
-</div>
-</div>
-</div>
+        </div>
+    </div>
+</form>
 </body>
 </html>
+<script>
+    layui.use(['form','laydate'],function () {
+        var laydate = layui.laydate;
+        //日期
+        var laydate = laydate.render({
+            elem:'#applydate'
+        });
+    })
+</script>

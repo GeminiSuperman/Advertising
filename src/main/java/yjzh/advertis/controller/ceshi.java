@@ -6,21 +6,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin")
 public class ceshi {
+
     /*进入主页面的路径*/
     @RequestMapping("/head")
     public String head() {
         return "/head";
     }
+
     /*首页*/
     @RequestMapping("/home")
     public String homepage() {
         return "/home/homepage";
     }
+
     /*广告发布*/
     @RequestMapping("/adissue")
     public String adissue() {
         return "/admanagement/adissue";
     }
+
     /*创建广告*/
     @RequestMapping("/adestablish")
     public String adestablish() {
