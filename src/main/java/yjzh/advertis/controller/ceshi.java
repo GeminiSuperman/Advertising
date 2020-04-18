@@ -73,5 +73,23 @@ public class ceshi {
         return "/locationdetails/adminlocation";
     }
 
+    /*user广告位置管理列表*/
+    @RequestMapping("/userlocation")
+    public String userlocation() {
+        return "/locationdetails/userlocation";
+    }
+
+    /*数据中心--收入报表*/
+    @RequestMapping("/incomereport")
+    public String incomereport() {
+        return "/idc/incomereport";
+    }
+
+    /*数据中心--激活报表*/
+    @RequestMapping("/activatereport")
+    public String activatereport() {
+        return "/idc/activatereport";
+    }
+
 
 }

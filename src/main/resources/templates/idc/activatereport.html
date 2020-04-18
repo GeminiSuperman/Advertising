@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>激活报表</title>
+    <!--引入layui-css-->
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" />
+    <!--引入layui-js-->
+    <script type="text/javascript" src="/lib/layui/layui.js"></script>
+</head>
+<body>
+    <form class="layui-form">
+        <div class="layui-row">
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">激活平台类型</label>
+                    <div class="layui-input-block">
+                        <select name="platformtype" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">APP</option>
+                            <option value="1">H5</option>
+                            <option value="2">小程序</option>
+                            <option value="3">PC端</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">激活用户类型</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="test1">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">激活用户类型</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="test1">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    layui.use(['form'],function () {
+        var form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    })
+</script>

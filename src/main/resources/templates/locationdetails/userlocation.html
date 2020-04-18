@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user广告位置列表</title>
+    <!--引入layui-css-->
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" />
+    <!--引入layui-js-->
+    <script type="text/javascript" src="/lib/layui/layui.js"></script>
+</head>
+<body>
+    <form class="layui-form">
+        <div class="layui-row">
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">广告平台</label>
+                    <div class="layui-input-block">
+                        <select name="city" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">APP</option>
+                            <option value="1">H5</option>
+                            <option value="2">小程序</option>
+                            <option value="3">PC端</option>
+                        </select>
+                    </div>
+                </div>x
+            </div>
+
+            <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">行业类别</label>
+                    <div class="layui-input-block">
+                        <select name="city" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">二手房</option>
+                            <option value="1">租房</option>
+                            <option value="2">新房</option>
+                            <option value="3">写字楼</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md3" style="padding-right: 20px">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">查询条件</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入查询的条件" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md3">
+                <button type="button" class="layui-btn layui-btn-primary">切换列表</button>
+                <button type="button" class="layui-btn layui-btn-primary">切换列表</button>
+                <button type="button" class="layui-btn layui-btn-primary">切换视图</button>
+            </div>
+
+            <div class="layui-tab">
+                <table class="layui-table" lay-data="{height:315, url:'/demo/table/user/', page:true, id:'test'}" lay-filter="test">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'id', width:80, sort: true}">广告位置ID</th>
+                        <th lay-data="{field:'username', width:80}">广告平台</th>
+                        <th lay-data="{field:'sex', width:80, sort: true}">行业类型</th>
+                        <th lay-data="{field:'city'}">行业类别</th>
+                        <th lay-data="{field:'sign'}">广告位置</th>
+                        <th lay-data="{field:'experience', sort: true}">广告位置状态</th>
+                        <th lay-data="{field:'score', sort: true}">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    layui.use(['form',],function () {
+        var form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    })
+</script>
