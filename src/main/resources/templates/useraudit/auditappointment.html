@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>user审核:--发布--预约</title>
+    <title>user审核:--预约--</title>
     <link rel="stylesheet" href="/lib/layui/css/layui.css" />
     <link rel="stylesheet" href="/css/audit.css">
     <script type="text/javascript" src="/lib/layui/layui.js"></script>
@@ -64,18 +64,30 @@
 
     <div class="layui-col-md4">
         <div class="layui-form-item">
-            <label class="layui-form-label">开始日期</label>
+            <label class="layui-form-label">日期</label>
             <div class="layui-input-block">
                 <input type="text" class="layui-input" id="begindate" placeholder="yyyy-MM-dd">
             </div>
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">结束日期</label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input" id="overdate" placeholder="yyyy-MM-dd">
-            </div>
-          </div>
-       </div>
+<!--        <div class="layui-form-item">-->
+<!--            <label class="layui-form-label layui-audit-label">审核类型</label>-->
+<!--            <div class="layui-input-block layui-audit-select">-->
+<!--                <select name="layui-audittype" lay-verify="audittype">-->
+<!--                    <option value="">请选择</option>-->
+<!--                    <option value="0">预约审核</option>-->
+<!--                    <option value="1">发布审核</option>-->
+<!--                    <option value="2">开通审核</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--        </div>-->
+        </div>
+<!--        <div class="layui-form-item">-->
+<!--            <label class="layui-form-label">结束日期</label>-->
+<!--            <div class="layui-input-block">-->
+<!--                <input type="text" class="layui-input" id="overdate" placeholder="yyyy-MM-dd">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--       </div>-->
 
         <div class="layui-col-md3 layui-container">
                 <div class="">
@@ -128,8 +140,8 @@
         var begindate = laydate.render({
             elem:'#begindate'
         });
-        var overdate = laydate.render({
-            elem:'#overdate'
-        });
+        // var overdate = laydate.render({
+        //     elem:'#overdate'
+        // });
     })
 </script>

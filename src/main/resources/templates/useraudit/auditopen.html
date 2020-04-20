@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user审核列表--开通推广审核列表</title>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" />
+    <script type="text/javascript" src="/lib/layui/layui.js"></script>
+</head>
+<body>
+    <form class="layui-form">
+       <div class="layui-row">
+           <div class="layui-col-md4">
+               <div class="layui-form-item">
+                   <label class="layui-form-label">用户名</label>
+                   <div class="layui-input-block">
+                       <input type="text" name="title"lay-verify="required" disabled readonly  class="layui-input layui-disabled">
+                   </div>
+               </div>
+
+               <div class="layui-form-item">
+                   <label class="layui-form-label">用户名</label>
+                   <div class="layui-input-block">
+                       <input type="text" name="title"lay-verify="required" disabled readonly  class="layui-input layui-disabled">
+                   </div>
+               </div>
+
+               <div class="layui-form-item">
+                   <label class="layui-form-label">行业类型</label>
+                   <div class="layui-input-block">
+                       <input type="text" name="title"lay-verify="required" disabled readonly  class="layui-input layui-disabled">
+                   </div>
+               </div>
+
+               <div class="layui-form-item">
+                   <label class="layui-form-label">VIP类型</label>
+                   <div class="layui-input-block">
+                       <input type="text" name="title"lay-verify="required" disabled readonly  class="layui-input layui-disabled">
+                   </div>
+               </div>
+
+               <div class="layui-form-item">
+                   <label class="layui-form-label">支付类型</label>
+                   <div class="layui-input-block">
+                       <input type="text" name="title"lay-verify="required" disabled readonly  class="layui-input layui-disabled">
+                   </div>
+               </div>
+
+               <div class="layui-form-item">
+                   <label class="layui-form-label">支付金额</label>
+                   <div class="layui-input-block">
+                       <input type="text" name="title"lay-verify="required" disabled readonly  class="layui-input layui-disabled">
+                   </div>
+               </div>
+
+               <div class="layui-form-item">
+                   <label class="layui-form-label">申请日期</label>
+                   <div class="layui-input-block">
+                       <input type="text" name="title"lay-verify="required" disabled readonly  class="layui-input layui-disabled">
+                   </div>
+               </div>
+
+               <div class="layui-form-item">
+                   <label class="layui-form-label">当前状态</label>
+                   <div class="layui-input-block">
+                       <input type="text" name="title"lay-verify="required" disabled readonly  class="layui-input layui-disabled">
+                   </div>
+               </div>
+
+               <div class="layui-form-item layui-container" style="margin-left:160px">
+                   <a href="javascript:;" class="layui-btn">我要升级</a>
+               </div>
+           </div>
+       </div>
+    </form>
+</body>
+</html>
+<script>
+    layui.use('form',function () {
+        var form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>

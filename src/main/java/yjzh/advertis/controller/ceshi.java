@@ -49,10 +49,21 @@ public class ceshi {
         return "/filemanagement/filemanagement";
     }
 
-    /*user审核列表*/
+    /*user审核列表--预约审核auditpublish*/
     @RequestMapping("/audit")
     public String audit() {
-        return "/useraudit/audit";
+        return "/useraudit/auditappointment";
+    }
+
+    /*user审核列表--发布审核*/
+    @RequestMapping("/auditpublish")
+    public String auditpublish() {
+        return "/useraudit/auditpublish";
+    }
+    /*user审核列表--发布审核*/
+    @RequestMapping("/auditopen")
+    public String auditopen() {
+        return "/useraudit/auditopen";
     }
 
     /*admin审核列表*/
